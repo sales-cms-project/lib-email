@@ -4,17 +4,21 @@
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "author": "Tiago Cambará",
   "scripts": {
     "build": "tsc",
+    "prepare" : "npm run build",
     "start": "npm run build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sales-cms-project/lib-email.git"
+    "url": "git+ssh://github.com/sales-cms-project/lib-email.git"
   },
   "keywords": [],
-  "author": "",
+  "files": [
+    "lib/**/*"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sales-cms-project/lib-email/issues"
