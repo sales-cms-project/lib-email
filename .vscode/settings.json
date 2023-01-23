@@ -1,0 +1,7 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "cSpell.words": [],
+    "typescript.preferences.importModuleSpecifier": "relative"
+}
