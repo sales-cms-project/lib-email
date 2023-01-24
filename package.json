@@ -25,6 +25,12 @@
   },
   "homepage": "https://github.com/sales-cms-project/lib-email#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.3",
     "ts-node": "^10.9.1",
     "tsc": "^2.0.4"
   },
