@@ -1,5 +1,3 @@
-function some(a: number, b: number): number {
-  return a + b;
-}
+import { some } from './controller/math.controller';
 
 export { some };
