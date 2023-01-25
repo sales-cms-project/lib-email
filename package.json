@@ -6,7 +6,7 @@
   "types": "lib/index.d.ts",
   "author": "Tiago Cambará",
   "scripts": {
-    "build": "tsup",
+    "build": "tsc",
     "prepare": "npm run build",
     "start": "npm run build -- --watch",
     "test": "jest"
@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/sales-cms-project/lib-email#readme",
   "devDependencies": {
-    "@swc/core": "^1.3.28",
     "@types/jest": "^29.2.6",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
@@ -36,9 +35,6 @@
     "prettier": "^2.8.3",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",
-    "tsup": "^6.5.0"
-  },
-  "dependencies": {
     "typescript": "^4.9.4"
   }
 }

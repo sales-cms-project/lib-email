@@ -8,5 +8,5 @@
       "skipLibCheck": true,
       "target": "es2017"
     },
-    "include": ["src/**/*", "tsup.config.ts"]
+    "include": ["src/**/*"]
   }
