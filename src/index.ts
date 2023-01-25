@@ -1,8 +1,3 @@
+import { some } from './controller/math.controller';
 
-function some(a:number, b: number):number {
-    return a + b
-}
-
-export {
-    some,
-}
+export { some };
