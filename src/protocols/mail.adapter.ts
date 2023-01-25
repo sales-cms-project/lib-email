@@ -1,10 +1,10 @@
 export interface MailAdapterSendDto {
-  from: string;
-  to: string;
-  cc: string[];
-  bcc: string[];
   subject: string;
   html: string;
+  to: string;
+  from?: string;
+  bcc?: string[];
+  cc?: string[];
   text?: string;
 }
 
