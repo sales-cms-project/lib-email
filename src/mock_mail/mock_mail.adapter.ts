@@ -6,7 +6,9 @@ export class MockMailAdapter implements MailAdapter {
   }
   send(dto: MailAdapterSendDto): Promise<boolean> {
     console.log(
-      `\n\n--------------The ${dto.subject} mail was send with:\n ${dto} \n\n---------`,
+      `\n\n--------------The ${
+        dto.subject
+      } mail was send with:\n ${JSON.stringify(dto)} \n\n---------`,
     );
     return Promise.resolve(true);
   }
