@@ -1,3 +1,2 @@
-import { some } from './controller/math.controller';
-
-export { some };
+export * from './protocols';
+export * from './mock_mail';
