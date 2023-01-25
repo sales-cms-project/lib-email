@@ -5,6 +5,8 @@
       "declaration": true,
       "outDir": "./lib",
       "strict": true,
+      "skipLibCheck": true,
+      "target": "es2017"
     },
     "include": ["src/**/*", "tsup.config.ts"]
   }

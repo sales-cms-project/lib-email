@@ -5,4 +5,5 @@ export default defineConfig({
   dts: true,
   outDir: './lib',
   target: 'es2017',
+  minify: true,
 });
