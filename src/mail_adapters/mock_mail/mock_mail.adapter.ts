@@ -1,4 +1,4 @@
-import { MailAdapter, MailAdapterSendDto } from '../protocols';
+import { MailAdapter, MailAdapterSendDto } from '../../protocols';
 
 export class MockMailAdapter implements MailAdapter {
   verify(): Promise<boolean> {
