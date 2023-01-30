@@ -6,11 +6,11 @@
   "types": "lib/index.d.ts",
   "author": "Tiago Cambará",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "prepare": "npm run build",
     "start": "npm run build -- --watch",
     "test": "jest",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --watch --silent",
     "test:cov": "jest --coverage"
   },
   "repository": {

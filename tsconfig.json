@@ -8,6 +8,5 @@
       "skipLibCheck": true,
       "target": "es2017"
     },
-    "include": ["src/**/*"],
-    "exclude": ["src/**/*.spec.ts"]
+    "include": ["src/**/*"]
   }
