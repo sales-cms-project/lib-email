@@ -1,2 +1,2 @@
 export * from './protocols';
-export * from './mock_mail';
+export * from './mail_adapters';
