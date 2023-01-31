@@ -1,12 +1,12 @@
 {
-    "compilerOptions": {
-      "module": "commonjs",
-      "lib": ["ES2020", "DOM"],
-      "declaration": true,
-      "outDir": "./lib",
-      "strict": true,
-      "skipLibCheck": true,
-      "target": "es2017"
-    },
-    "include": ["src/**/*"]
-  }
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["ES2020", "DOM"],
+    "declaration": true,
+    "outDir": "./lib",
+    "strict": true,
+    "skipLibCheck": true,
+    "target": "es2017"
+  },
+  "include": ["src/**/*"]
+}

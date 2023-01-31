@@ -7,8 +7,9 @@
   "author": "Tiago Cambará",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
+    "build:dev": "tsc",
     "prepare": "npm run build",
-    "start": "npm run build -- --watch",
+    "start": "npm run build:dev -- --watch",
     "test": "jest",
     "test:watch": "jest --watch --silent",
     "test:cov": "jest --coverage"
