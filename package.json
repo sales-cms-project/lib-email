@@ -6,9 +6,9 @@
   "types": "lib/index.d.ts",
   "author": "Tiago Cambará",
   "scripts": {
-    "postbuild": "copyfiles -u 1 src/**/*.{html,txt} lib",
-    "build": "tsc -p tsconfig.build.json && npm run postbuild",
-    "build:dev": "tsc && npm run postbuild",
+    "prebuild": "copyfiles -u 1 src/**/*.{html,txt} lib",
+    "build": "npm run prebuild && tsc -p tsconfig.build.json",
+    "build:dev": "npm run prebuild && tsc",
     "prepare": "npm run build",
     "start": "npm run build:dev -- --watch",
     "test": "jest",
