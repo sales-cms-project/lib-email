@@ -1,0 +1,1 @@
+Welcome <%= username %>  to the Sales CMS platform
