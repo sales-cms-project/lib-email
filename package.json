@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/sales-cms-project/lib-email#readme",
   "devDependencies": {
+    "@types/ejs": "^3.1.1",
     "@types/jest": "^29.2.6",
     "@types/nodemailer": "^6.4.7",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
