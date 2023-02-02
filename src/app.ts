@@ -1,8 +1,22 @@
 import * as dotenv from 'dotenv';
 import { NodemailerAdapter } from './mail_adapters';
 import { MailAdapter } from './protocols';
+import { TemplateEnum } from './templates/protocols';
+import { TemplateService } from './templates/template.service';
 dotenv.config();
 console.log('Test Lib');
+
+const templateMailParameter = {
+  [TemplateEnum.WELCOME]: {
+    username: 'Test User',
+  },
+};
+
+const templateMailSubjectParameter = {
+  [TemplateEnum.WELCOME]: {
+    username: 'User',
+  },
+};
 
 async function createMailAdapter(): Promise<MailAdapter> {
   const mailAdapter = new NodemailerAdapter({
@@ -18,11 +32,27 @@ async function createMailAdapter(): Promise<MailAdapter> {
   return mailAdapter;
 }
 
-async function sendMail(templateName: string): Promise<void> {
+async function sendMail(templateName: TemplateEnum): Promise<void> {
+  const templateService = TemplateService.getInstance();
   const mailAdapter = await createMailAdapter();
+  const dto = {
+    language: 'en',
+    template: templateName,
+  };
+
+  const { html, text } = await templateService.getTemplate({
+    ...dto,
+    parameters: templateMailParameter[templateName],
+  });
+  const subject = await templateService.getSubject({
+    ...dto,
+    parameters: templateMailSubjectParameter[templateName],
+  });
+
   await mailAdapter.send({
-    html: '<p>welcome mail<p>',
-    subject: 'welcome',
+    html,
+    text,
+    subject,
     to: 'user@test.com',
   });
 }
@@ -34,12 +64,12 @@ async function commands(): Promise<void> {
 
   switch (command) {
     case 'send_mail':
-      const [_, templateName] = args;
+      const [, templateName] = args;
       if (!templateName || templateName.trim() === '') {
         console.log(commandExample);
         break;
       }
-      await sendMail(templateName);
+      await sendMail(templateName as TemplateEnum);
       break;
     default:
       console.log(commandExample);
