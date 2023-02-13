@@ -4,7 +4,7 @@ import { MailAdapter } from './protocols';
 import { TemplateEnum } from './templates/protocols';
 import { TemplateService } from './templates/template.service';
 dotenv.config();
-console.log('Test Lib');
+console.log('\n\nCMD Lib\n\n');
 
 const templateMailParameter = {
   [TemplateEnum.WELCOME]: {
@@ -51,13 +51,14 @@ async function sendMail(
     ...dto,
     parameters: templateMailSubjectParameter[templateName],
   });
-
+  console.log('Sending an email...');
   await mailAdapter.send({
     html,
     text,
     subject,
     to: 'user@test.com',
   });
+  console.log('The email has been sent!');
 }
 
 async function commands(): Promise<void> {
@@ -77,6 +78,11 @@ async function commands(): Promise<void> {
         languageStr && languageStr.trim() !== '' ? languageStr : 'en';
 
       await sendMail(templateName as TemplateEnum, language);
+      break;
+    case 'templates':
+      console.log('\n------Templates------\n');
+      Object.values(TemplateEnum).forEach((template) => console.log(template));
+      console.log('\n---------------------\n');
       break;
     default:
       console.log(commandExample);
