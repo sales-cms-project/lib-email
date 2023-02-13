@@ -32,11 +32,14 @@ async function createMailAdapter(): Promise<MailAdapter> {
   return mailAdapter;
 }
 
-async function sendMail(templateName: TemplateEnum): Promise<void> {
+async function sendMail(
+  templateName: TemplateEnum,
+  language: string,
+): Promise<void> {
   const templateService = TemplateService.getInstance();
   const mailAdapter = await createMailAdapter();
   const dto = {
-    language: 'en',
+    language,
     template: templateName,
   };
 
@@ -60,16 +63,20 @@ async function sendMail(templateName: TemplateEnum): Promise<void> {
 async function commands(): Promise<void> {
   const args = process.argv.slice(2);
   const [command] = args;
-  const commandExample = 'Commands:\n send_mail <template name> \n templates';
+  const commandExample =
+    'Commands:\n send_mail <template name> <language=en> \n templates';
 
   switch (command) {
     case 'send_mail':
-      const [, templateName] = args;
+      const [, templateName, languageStr] = args;
       if (!templateName || templateName.trim() === '') {
         console.log(commandExample);
         break;
       }
-      await sendMail(templateName as TemplateEnum);
+      const language =
+        languageStr && languageStr.trim() !== '' ? languageStr : 'en';
+
+      await sendMail(templateName as TemplateEnum, language);
       break;
     default:
       console.log(commandExample);
