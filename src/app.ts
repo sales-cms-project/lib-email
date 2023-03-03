@@ -10,12 +10,16 @@ const templateMailParameter = {
   [TemplateEnum.WELCOME]: {
     username: 'Test User',
   },
+  [TemplateEnum.FORGOT_PASSWORD]: {
+    changePasswordLink: 'app link',
+  },
 };
 
 const templateMailSubjectParameter = {
   [TemplateEnum.WELCOME]: {
     username: 'User',
   },
+  [TemplateEnum.FORGOT_PASSWORD]: undefined,
 };
 
 async function createMailAdapter(): Promise<MailAdapter> {
